@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 from .forms import UserRegisterForm, LoginForm
 from .models import UserProfile
+from diagnostico.models import Diagnostico
 
 
 def register_view(request):
@@ -46,7 +47,15 @@ def login_view(request):
 @login_required
 def dashboard_view(request):
     profile = UserProfile.objects.get(user=request.user)
-    return render(request, 'accounts/dashboard.html', {'profile': profile})
+    historico = Diagnostico.objects.filter(usuario=request.user).order_by('-criado_em')
+    return render(
+        request,
+        'accounts/dashboard.html',
+        {
+            'profile': profile,
+            'historico': historico,
+        },
+    )
 
 
 def logout_view(request):
