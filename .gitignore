@@ -1,0 +1,19 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+*.pot
+*.py[cod]
+*.swp
+.DS_Store
+.env
+
+# Django stuff:
+staticfiles/
+media/
+
+# PostgreSQL files
+*.psql
