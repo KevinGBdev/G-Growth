@@ -47,6 +47,9 @@ INSTALLED_APPS = [
     "erp_light",
     "erp_pro",
     "pagamentos",
+    "core_erp",
+    "dashboard",
+    "integra",
 ]
 
 MIDDLEWARE = [

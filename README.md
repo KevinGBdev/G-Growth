@@ -18,3 +18,6 @@ python manage.py runserver
 - **accounts** – basic authentication with an extended user profile.
 - **diagnostico**, **ferramentas**, **erp_light**, **erp_pro**, **pagamentos** –
   placeholders for future development.
+- **core_erp** – base models for ERP modules.
+- **dashboard** – simple user dashboard.
+- **integra** – control of enabled modules per user.

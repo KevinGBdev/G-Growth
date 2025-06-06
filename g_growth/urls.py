@@ -22,4 +22,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("conta/", include("accounts.urls")),
     path("diagnostico/", include("diagnostico.urls")),
+    path("painel/", include("dashboard.urls")),
+    path("modulos/", include("integra.urls")),
+    path("erp/", include("core_erp.urls")),
 ]

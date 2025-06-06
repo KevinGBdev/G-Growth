@@ -1,0 +1,8 @@
+<h2>Módulos Ativos</h2>
+<ul>
+  {% for m in modulos %}
+    <li>{{ m.nome_modulo }} - {{ m.ativo|yesno:"Ativo,Inativo" }}</li>
+  {% empty %}
+    <li>Nenhum módulo ativado.</li>
+  {% endfor %}
+</ul>

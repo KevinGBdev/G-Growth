@@ -3,6 +3,8 @@
 <p>Cidade: {{ profile.cidade }} - {{ profile.estado }}</p>
 <p>Segmento: {{ profile.segmento }}</p>
 <a href="{% url 'logout' %}">Sair</a>
+<br>
+<a href="{% url 'dashboard_home' %}">Ir para o painel</a>
 
 <hr>
 <h3>📊 Histórico de Diagnósticos ({{ historico|length }})</h3>
