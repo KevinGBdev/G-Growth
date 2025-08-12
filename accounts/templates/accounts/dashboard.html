@@ -1,0 +1,23 @@
+<h2>Bem-vindo, {{ request.user.username }}</h2>
+<p>Plano: {{ profile.plano }}</p>
+<p>Cidade: {{ profile.cidade }} - {{ profile.estado }}</p>
+<p>Segmento: {{ profile.segmento }}</p>
+<a href="{% url 'logout' %}">Sair</a>
+<br>
+<a href="{% url 'dashboard_home' %}">Ir para o painel</a>
+
+<hr>
+<h3>📊 Histórico de Diagnósticos ({{ historico|length }})</h3>
+
+{% if historico %}
+  <ul>
+    {% for d in historico %}
+      <li>
+        <strong>{{ d.criado_em|date:"d/m/Y H:i" }}</strong> –
+        <a href="{% url 'resultado_diagnostico' d.id %}">Ver relatório</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>Nenhum diagnóstico realizado ainda.</p>
+{% endif %}

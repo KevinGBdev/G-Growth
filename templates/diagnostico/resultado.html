@@ -1,0 +1,20 @@
+<h2>Resultado do Diagnóstico</h2>
+<p>Data: {{ diagnostico.criado_em|date:"d/m/Y H:i" }}</p>
+
+<h3>Respostas:</h3>
+<ul>
+  {% for r in respostas %}
+    <li><strong>{{ r.pergunta.texto }}</strong>: {{ r.resposta }}</li>
+  {% endfor %}
+</ul>
+
+<h3>Alertas:</h3>
+{% if alertas %}
+  <ul>
+    {% for alerta in alertas %}
+      <li style="color: red;">⚠️ {{ alerta }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>✅ Nenhum alerta detectado. Tudo certo até aqui!</p>
+{% endif %}
